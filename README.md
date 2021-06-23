@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Assignment 4
+
+I will store user token or user in loacal storage and then i will create a react function component in which i will check if authentication of user. when ever we require token to call api we just put the function component instead so if user token is not expired it will return user token else it will logout or redirect to login page.
+
+
+### Assignment 5
+
+Yes, i can identify two problems in code.

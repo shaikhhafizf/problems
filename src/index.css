@@ -1,13 +1,330 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: white;
+}
+ul{
+  list-style: none;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+button{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+button:focus{
+  outline: none;
+}
+button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+input{
+  outline: none;
+  border:none;
+}
+hr{
+  width: 100%;
+  height: 1px;
+  background-color: #E8E6E7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ------------------------------- Header CSS ---------------------- */
+.Header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  border-bottom: 1px solid transparent;
+}
+.Header a{
+  margin: 0px 10px;
+}
+.Header a:hover{
+  border-bottom: 1px solid black;
+}
+
+.ActiveHeaderLink{
+  border-bottom: 1px solid black;
+}
+/*--------------------------- Component Header ------------------*/
+.ComponentHeader{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+}
+.ComponentHeader svg{
+  width: 100px;
+  height: 100px;
+  fill: white;
+}
+/*------------------------------- Loader ----------------------------*/
+
+.loaderBackground{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader {
+    text-align: center;
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: 2px solid #AE1536; /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+  }
+ 
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+/*------------------------------- Problelm A ---------------------*/
+.Lists{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  text-align: left;
+}
+.Lists > div > h4{
+  margin-bottom: 15px;
+}
+.items{
+  width: 350px;
+}
+.items > button{
+  width: 350px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(199, 199, 199);
+  border-radius: 5px;
+  margin: 5px 0px;
+}
+.items > button:nth-child(odd){
+  background-color: rgb(232, 232, 232);
+}
+.items > button svg{
+  stroke: white;
+  margin: 8px;
+}
+.items > button:hover svg{
+  fill: red;
+  stroke: rgb(199, 199, 199);
+}
+.items > button:nth-child(odd):hover svg{
+  stroke: rgb(232, 232, 232);
+}
+.items > button:hover svg path:first-child{
+  stroke: red;
+}
+
+/*-------------------------- Problem B ---------------------------*/
+.main{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.searchHistory{
+  min-width: 200px;
+  max-width: 200px;
+  padding-top: 120px;
+  padding-left: 45px;
+  text-align: left;
+}
+.searchHistory h4{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+.HistorySearchKey{
+  width: auto;
+  display: inline-block;
+  background-color: rgb(235, 235, 235);
+  padding: 5px 20px;
+  border-radius: 15px;
+  margin: 10px;
+  margin-left: 0px;
+}
+.searchBox{
+  flex-grow: 1;
+  text-align: left;
+  padding: 30px 40px 30px 100px;
+}
+.searchBox input{
+  width: 350px;
+  height: 70px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #b9193c;
+  background-color: rgb(235, 235, 235);
+  padding-left: 25px;
+  border-radius: 10px;
+}
+.searchBox .Gifs{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.GifBox{
+  width: 250px;
+  height: 300px;
+  background-color: rgb(235, 235, 235);
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+.GifBox img{
+  width: 80%;
+  margin:10%;
+  margin-bottom: 0px;
+}
+.GifBox div{
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+.GifBox div svg{
+  width: 15px;
+  height: 15px;
+  margin-left: 3px;
+}
+/*----------------------------------- Wizard --------------------------*/
+
+.content{
+  flex-grow: 1;
+  text-align: center;
+}
+/* step flow css */
+.flow {
+  display: inline-flex;
+  width: 85%;
+  max-width: 793px;
+  align-items: center;
+  margin-bottom: 86px;
+  margin-top: 61px;
+  box-sizing: border-box;
+}
+.process{
+  position: relative;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3238468c;
+}
+.stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  border: 1.5px solid #3238468c;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin: 4px 16px;
+}
+.stageTitle{
+  position: absolute;
+  top: 40px;
+  white-space: nowrap;
+}
+.process svg {
+  margin-bottom: 4px;
+}
+.activeProcess{
+  color: #323846;
+}
+.activeProcess .stage{
+  background: #2b2d42;
+  color: #ffffff;
+  border: none;
+}
+.break {
+  width: 100%;
+  height: 2px;
+  background-color: #323846;
+  opacity: 0.55;
+}
+/*---------------------- Form Content -----------------------*/
+.formContent{
+  text-align: left;
+  padding: 50px;
+  padding-bottom: 10px;
+}
+.inputBox{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.inputBox input{
+  height: 40px;
+  width: 250px;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 10px;
+  border: 1px solid #AE1536;
+  border-radius: 10px;
+  margin: 10px;
+}
+.Ques{
+  font-size: 21px;
+  font-weight: 500;
+}
+.RedBtn{
+  height: 40px;
+  padding: 0px 20px;
+  border: 1px solid #AE1536;
+  border-radius: 10px;
+  margin: 0px 10px;
+  box-sizing: border-box;
+}
+.selectedBtn,.RedBtn:hover{
+  color: white;
+  background-color: #AE1536;
+}
+.error{
+  font-size: 14px;
+  font-weight: 400;
+  color: #AE1536;
+  text-align: center;
+}
+.flowBtn{
+  display: inline-flex;
+  align-items: center;
+  margin: auto;
 }
